@@ -1,0 +1,69 @@
+{
+    "intents": [
+        {
+            "name": "greetings",
+            "sentences": [
+                "hi",
+                "hey",
+                "hello",
+                "good morning",
+                "good afternoon",
+                "good evening"
+            ]
+        },
+        {
+            "name": "goodbye",
+            "sentences": [
+                "goodbye", 
+                "see you later",
+                "chat next time",
+                "have a nice day"
+            ]
+        },
+        {
+            "name": "ask_how",
+            "sentences": [
+                "how do you do",
+                "how are you"
+            ]
+        },
+        {
+            "name": "confirm",
+            "sentences": [
+                "yes", "ok", "okay",
+                "of course",
+                "all right",
+                "alright"
+            ]
+        },
+        {
+            "name": "deny",
+            "sentences": [
+                "no",
+                "surely not",
+                "no way, too expensive",
+                "no way i can buy such a thing"
+            ]
+        }
+    ],
+    "responses": [
+        {
+            "type": "greetings",
+            "answers": [
+                "Good {m}, how can I help you ?"
+            ]
+        },
+        {
+            "type": "goodbye",
+            "answers": [
+                "see you next time, hope I could help you!"
+            ]
+        },
+        {
+            "type": "ask_how",
+            "answers": [
+                "I'm a computer, so long as my system runs without bugs I'll be fine :)"
+            ]
+        }
+    ]
+}
