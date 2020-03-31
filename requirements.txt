@@ -83,7 +83,7 @@ srsly==1.0.1
 starlette==0.12.9
 tabulate==0.8.6
 tensorboard==1.12.2
-tensorflow==1.12.0
+tensorflow==1.15.2
 termcolor==1.1.0
 thinc==7.3.1
 tqdm==4.41.1
