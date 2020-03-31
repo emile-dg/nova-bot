@@ -1,33 +1,3 @@
 {
-    "templates": [
-        ["order wax",
-            ["ACTION", "PRODUCT"]],
-        ["buy wax",
-            ["ACTION", "PRODUCT"]],
-        ["I need wax",
-            ["-","ACTION","PRODUCT"]],
-        ["I need wax for less than FCFA 10000",
-            ["-","ACTION", "PRODUCT", "-", "COMPARE", "-", "-", "PRICE"]],
-        ["I need 10 generic wax for a marriage ceremony", 
-            ["-", "ACTION", "QUANTITY", "TYPE", "PRODUCT", "-", "-", "ROOT", "-"]],
-        ["suggest wax for a marriage",
-            ["ACTION", "PRODUCT", "-","-","ROOT"]],
-        ["what can you suggesst for a marriage ceremony",
-            ["-","-","-","ACTION","-","-","ROOT","-"]],
-        ["I need a high quality wax for my marriage",
-            ["-", "ACTION", "-", "QUALITY", "-", "PRODUCT", "-", "-", "ROOT"]],
-        ["locate the nearest LAKING shop please",
-            ["ACTION", "-", "PROXIMITY", "ORG", "ROOT" ,"-"]],
-        ["locate the nearest shop",
-            ["ACTION", "-", "PROXIMITY", "ROOT"]],
-        ["locate the nearest shop from the Post of Yde", 
-            ["ACTION", "-", "PROXIMITY", "OBJ", "-", "-", "AREA", "-", "CITY"]],
-        ["what is your best wax available",
-            ["-","-","-","QUALITY", "PRODUCT", "-"]],
-        ["what can you recommend for a marriage ?",
-            ["-","-","-","ACTION", "-","-","ROOT", "-"]],
-        ["what can you propose as wax to me for a marriage",
-            ["-","-","-","ACTION", "-", "PRODUCT", "-", "-", "-", "-", "ROOT"]]
-            
-    ]
+    "templates": []
 }

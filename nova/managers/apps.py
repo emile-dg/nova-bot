@@ -4,7 +4,7 @@
 from importlib import import_module
 
 
-INSTALLED_APPS = ["base", "shop_buy", "shop_recommend", "shop_location", "shop_filter_product"]
+INSTALLED_APPS = ["base"]
 bot_context = str()
 
 class AppManager(object):

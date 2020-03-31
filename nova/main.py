@@ -1,2 +1,2 @@
-"""BECCA web API"""
+"""NOVA web API"""
 # still to be implemented

@@ -50,19 +50,21 @@
         {
             "type": "greetings",
             "answers": [
-                "Good {m}, how can I help you ?"
+                "Good {m}, how are you?",
+                "Hi, what's up?"
             ]
         },
         {
             "type": "goodbye",
             "answers": [
-                "see you next time, hope I could help you!"
+                "see you next time!"
             ]
         },
         {
             "type": "ask_how",
             "answers": [
-                "I'm a computer, so long as my system runs without bugs I'll be fine :)"
+                "I'm feeling great, what about you? ",
+                "I'm fine, and you?"
             ]
         }
     ]
