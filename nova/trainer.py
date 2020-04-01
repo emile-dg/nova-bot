@@ -1,5 +1,8 @@
-
 """ Module for training the bot """
+
+# modified code from the official spacy documentation
+# reference at https://spacy.io/usage/examples 
+# section: 'Training a custom parser for chat intent semantics'
 
 import json
 from random import shuffle as random_shuffle
@@ -8,7 +11,7 @@ from spacy.util import compounding, minibatch
 
 
 def create_parser (nlp):
-    """"Setup and return the parser"""
+    """"Setup and return the dependency parser"""
     # use build-in dependency parser class using a new instance
     if "parser" in nlp.pipe_names:
         nlp.remove_pipe ("parser")

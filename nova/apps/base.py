@@ -10,13 +10,20 @@ from random import randint
 stemmer = LancasterStemmer()
 
 class App:
-
+    """Base app."""
     def __init__(self):
         self.template_filename = "templates\\base.json"
         self.context = {}
         self.__responses = self.load_responses ()
 
     def load_template (self):
+        r"""
+        returns a dictionary of the format:
+            {
+                "intent": ["word 1", "word 2"],
+                "intent 2": []
+            }
+        """
         raw = {}
         try:
             with open (self.template_filename, "r") as file:
@@ -37,19 +44,19 @@ class App:
     @staticmethod
     def get_moment():
         """
-        Used to generate appropriate salutation. Returns 'morning', 'afternoon' 
-        or 'evening', based on the actual system time
+        Used to generate appropriate greeting. Returns 'morning', 'afternoon' 
+        or 'evening', based on the actual computer system time
         """
         hour = datetime.now().hour
         if hour >= 5 and hour <= 12:
-            moment = "morning"
+            return "morning"
         elif hour > 12 and hour <= 18:
-            moment = "afternoon"
+            return "afternoon"
         else:
-            moment = "evening"
-        return moment
+            return "evening"
 
     def load_responses (self):
+        """Load the responses from the template"""
         responses = []
         try:
             with open (self.template_filename, "r") as file:
@@ -61,6 +68,7 @@ class App:
             return responses
 
     def execute (self, doc):
+        """::overwrites the BaseApp.execute method"""
         intent = doc._.intent
         moment = self.get_moment()
         r = str()
@@ -73,10 +81,10 @@ class App:
             return {
                 "message": r.format(m=moment),
                 "state": 1
-                }
+            }
         else:
             return {
                 "message": r,
                 "state": 1
-                }
+            }   
 

@@ -1,0 +1,1 @@
+"""Package of Nova managers"""
