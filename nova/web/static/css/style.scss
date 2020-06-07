@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100%;
+    font-size: 16px;
+}
+
+.nova-chat-wrapper {
+    width: 30%;
+    height: 80%;
+    position: absolute;
+    background-color: #393748;
+    z-index: 999;
+    right: 20px; bottom: 20px;
+    color: white;
+    font-family: montserrat, sans-serif;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    transition: .3s;
+    overflow: hidden;
+
+    .closed-icon {
+        display: none;
+    }
+
+    &.closed {
+        width: 65px;
+        height: 65px;
+        padding: 1rem;
+        border-radius: 50%;
+        
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        .closed-icon {
+            display: block;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        & > .header,
+        & > .body-content,
+        & > .foot {
+            display: none;
+        }
+    }
+
+    & > .header,
+    & > .body-content,
+    & > .foot {
+        width: 100%;
+        display: block;
+        background: transparent;
+    }
+
+    .header {
+        font-size: 1rem;
+        height: 8%;
+        clear: both;
+        display: table;
+
+        opacity: 0; 
+        animation-delay: 1s;
+        animation: .3s appear linear;
+        animation-fill-mode: both;
+
+        .logo {
+            float: left;
+            p {
+                font-size:1.5rem;
+                user-select: none;
+            }
+        }
+        button.close {
+            padding: .5rem 1rem;
+            font-size: 1.2rem;
+            border: none;
+            background: none;
+            float: right;
+            color: white;
+            transition: .3s;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.075);
+                border-radius: 4px;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .body-content {
+        height: 84%;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .message-box {
+            width: 100%;
+            clear: both;
+            display: table;
+            padding: .5rem;
+            p {
+                font-size: .8rem;
+                padding: .5rem;
+                border-radius: 4px;
+                max-width: 75%;
+
+                opacity: 0; 
+                animation-delay: 1s;
+                animation: .3s appear linear;
+                animation-fill-mode: both;
+                
+            }
+            &.bot {
+                p{
+                    float: left;
+                    background-color: #514e67;
+                }
+            }
+            &.user {
+                p {
+                    float: right;
+                    background-color: #6f689e;
+                }
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: #393748;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: #272631;
+            border-radius: 10px;
+        }
+        
+        &::-webkit-scrollbar-thumb:hover {
+            background: #272631;
+        }
+
+    }
+
+    .foot {
+        height: 8%;
+        opacity: 0; 
+        animation-delay: 1s;
+        animation: .3s appear linear;
+        animation-fill-mode: both;
+
+        .input-control-wrapper {
+            width: 100%;
+            height: 100%;
+            clear: both;
+            display: table;
+            border-radius: 4px;
+            background-color: #272631;
+
+
+            input,
+            button {
+                border: none;
+                color: white;
+            }
+
+            input {
+                float: left;
+                width: 88%;
+                height: 100%;
+                background: none;
+                padding: .5rem;
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            button {
+                width: 12%;
+                height: 100%;
+                float: right;
+                background: none;
+                cursor: pointer;
+                outline: none;
+                transition: .3s;
+                &:hover {
+                    background-color: #6f689e;
+                }
+            }
+        }
+    }
+}
+
+@keyframes appear {
+    from{
+        transform: scale(.8);
+        opacity: 0;
+    } 95% {
+        transform: scale(1.03);
+    } 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

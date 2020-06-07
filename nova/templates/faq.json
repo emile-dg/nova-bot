@@ -1,0 +1,21 @@
+{
+    "intents": [
+        {
+            "name": "faq_becca_name",
+            "sentences": [
+                ["what is your name", [] ],
+                ["how can i call you", [] ]
+            ]
+        }
+    ],
+
+    "responses": [
+        {
+            "type": "faq_becca_name",
+            "answers": [
+                "My name is BECCA",
+                "You can call me BECCA and I'm your assistant"
+            ]
+        }
+    ]
+}

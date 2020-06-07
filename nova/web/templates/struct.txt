@@ -1,0 +1,36 @@
+<!-- <div class="nova-chat-wrapper closed" id="nova">
+
+            <div class="closed-icon" id="openNova">
+                <i class="fa fa-comments"></i>
+            </div>
+
+            <div class="header">
+                <div class="logo"> <p>BECCA</p> </div>
+                <button class="close" id="closeNova">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="body-content">
+                <div class="message-box bot">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita optio maiores iste fuga, veniam deleniti delectus tempora maxime necessitatibus voluptate?
+                    </p>
+                </div>
+                <div class="message-box user">
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, cum.
+                    </p>
+                </div>
+            </div>
+
+            <div class="foot">
+                <div class="input-control-wrapper">
+                    <input type="text">
+                    <button>
+                        <i class="fa fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div> -->

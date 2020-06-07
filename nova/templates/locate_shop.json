@@ -1,0 +1,56 @@
+{
+    "intents": [
+        {
+            "name": "locate_shop",
+            "sentences": [
+                ["where are the shops of Yaounde ?",
+                    []
+                ],
+                ["locate shops in -",
+                    []
+                ],
+                ["where are the - shops found",
+                    []
+                ],
+                ["locate the various - shops of -",
+                    []
+                ],
+                ["where are the various - stores in -",
+                    []
+                ],
+                ["where can I get - store in -",
+                    []
+                ]
+            ]
+        },
+        {
+            "name": "locate_item",
+            "sentences": [
+                ["where can I get -",
+                    []
+                ],
+                ["where can I get - in -",
+                    []
+                ],
+                ["which shop has -",
+                    []
+                ],
+                ["do you know which shop in - has -",
+                    []
+                ],
+                ["look for - in ",
+                    []
+                ],
+                ["where in - can I buy -",
+                    []
+                ],
+                ["which shop in - offers -",
+                    []
+                ]
+            ]
+        }
+    ],
+    "responses": [
+
+    ]
+}

@@ -5,34 +5,39 @@ from nltk import word_tokenize
 from nltk.stem.lancaster import LancasterStemmer
 from string import punctuation
 from datetime import datetime
-from random import randint
+from random import choice
 
 stemmer = LancasterStemmer()
 
 class App:
-    """Base app."""
+    """Base app"""
     def __init__(self):
         self.template_filename = "templates\\base.json"
-        self.context = {}
-        self.__responses = self.load_responses ()
+        self.__context = {}
+        self.__responses = self.__load_responses()
+        self.intents = self.__load_intents()
 
-    def load_template (self):
+    def __load_intents(self):
+        """Get a tuple of all intents from the app template"""
+        return tuple(set(self.load_template().keys()))
+        
+    def load_template(self):
         r"""
         returns a dictionary of the format:
             {
-                "intent": ["word 1", "word 2"],
+                "intent 1": ["intent 1", "intent 2"],
                 "intent 2": []
             }
         """
         raw = {}
         try:
             with open (self.template_filename, "r") as file:
-                intents = json.load (file)["intents"]
+                intents = json.load(file)["intents"]
                 for intent in intents:
                     class_name = intent['name']
                     raw[class_name] = []
                     for sentence in intent['sentences']:
-                        for word in word_tokenize(sentence):
+                        for word in word_tokenize(sentence[0]):
                             if word not in punctuation:
                                 raw[class_name].append (stemmer.stem(word.lower()))
         except Exception:
@@ -55,7 +60,7 @@ class App:
         else:
             return "evening"
 
-    def load_responses (self):
+    def __load_responses(self):
         """Load the responses from the template"""
         responses = []
         try:
@@ -67,16 +72,18 @@ class App:
         finally:
             return responses
 
-    def execute (self, doc):
-        """::overwrites the BaseApp.execute method"""
+    def execute(self, doc):
+        """Returns a dict with a response to the given message
+        and a state to mean if the response is a question asking 
+        for something or not"""
         intent = doc._.intent
         moment = self.get_moment()
         r = str()
         for resp in self.__responses:
             if intent in resp:
-                r = resp[intent][ randint( 0, len(resp[intent])-1 ) ]
+                r = choice(resp[intent])
                 break
-        # print (intent)
+        print ("[debug] intent: ", intent)
         if intent == "greetings":
             return {
                 "message": r.format(m=moment),
@@ -88,3 +95,5 @@ class App:
                 "state": 1
             }   
 
+    def has_intent(self, intent):
+        return intent in self.intents

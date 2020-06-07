@@ -1,8 +1,6 @@
 from os import system
 from sys import argv
 
-import spacy
-
 from managers.models import ModelManager
 from managers.apps import AppManager
 from managers.chat import ChatManager
@@ -22,9 +20,9 @@ if __name__ == "__main__":
     print("- Chat ready!")
 
     if "train-bot" in argv:
-        # print("- Training...")
+        print("- Training...")
         train_model(model_mgr)
-        # print("- NOVA trained!")
+        print("- bot trained!")
 
     while True:
         try:

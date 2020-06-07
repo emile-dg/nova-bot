@@ -3,46 +3,86 @@
         {
             "name": "greetings",
             "sentences": [
-                "hi",
-                "hey",
-                "hello",
-                "good morning",
-                "good afternoon",
-                "good evening"
+                ["hi", 
+                    [] 
+                ],
+                ["hey", 
+                    [] 
+                ],
+                ["hello", 
+                    [] 
+                ],
+                ["good morning", 
+                    [] 
+                ],
+                ["good afternoon", 
+                    [] 
+                ],
+                ["good evening",
+                    [] 
+                ]
             ]
         },
         {
             "name": "goodbye",
             "sentences": [
-                "goodbye", 
-                "see you later",
-                "chat next time",
-                "have a nice day"
+                ["goodbye",  
+                    [] 
+                ],
+                ["see you later", 
+                    [] 
+                ],
+                ["chat next time", 
+                    [] 
+                ],
+                ["have a nice day",
+                    [] 
+                ]
             ]
         },
         {
             "name": "ask_how",
             "sentences": [
-                "how do you do",
-                "how are you"
+                ["how do you do", 
+                    [] 
+                ],
+                ["how are you",
+                    [] 
+                ]
             ]
         },
         {
             "name": "confirm",
             "sentences": [
-                "yes", "ok", "okay",
-                "of course",
-                "all right",
-                "alright"
+                ["yes", "ok", "okay", 
+                    [] 
+                ],
+                ["of course", 
+                    [] 
+                ],
+                ["all right", 
+                    [] 
+                ],
+                ["alright",
+                    [] 
+                ]
             ]
         },
         {
             "name": "deny",
             "sentences": [
-                "no",
-                "surely not",
-                "no way, too expensive",
-                "no way i can buy such a thing"
+                ["no", 
+                    [] 
+                ],
+                ["surely not", 
+                    [] 
+                ],
+                ["no way, too expensive", 
+                    [] 
+                ],
+                ["no way i can buy such a thing",
+                    [] 
+                ]
             ]
         }
     ],
@@ -50,21 +90,20 @@
         {
             "type": "greetings",
             "answers": [
-                "Good {m}, how are you?",
-                "Hi, what's up?"
+                "Good {m}, how can I help you?"
             ]
         },
         {
             "type": "goodbye",
             "answers": [
-                "see you next time!"
+                "Thanks. You can always get me her for any help"
             ]
         },
         {
             "type": "ask_how",
             "answers": [
-                "I'm feeling great, what about you? ",
-                "I'm fine, and you?"
+                "I'm feeling great, how can I help you?",
+                "I'm fine, is there something I can do for you?"
             ]
         }
     ]
