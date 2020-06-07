@@ -15,7 +15,6 @@ INSTALLATION GUIDE
 ------------------
 To setup and make the project ready to use, you simply need to download the repo, decompress it,
 install all the required libraries in the `requirements.txt` file in the project repo. To do so, 
-=======
 install all the required libraries in the *requirements.txt* file in the project repo. To do so,
 simply type in the following command using the command prompt on windows.
 *N.B*: A prior basic knowledge of using the command prompt is needed. This assumes that python have
