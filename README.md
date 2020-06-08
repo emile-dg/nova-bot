@@ -13,12 +13,9 @@ reusable) and easy to train.
 
 INSTALLATION GUIDE
 ------------------
-To setup and make the project ready to use, you simply need to download the repo, uncompress it,
-<<<<<<< HEAD
+To setup and make the project ready to use, you simply need to download the repo, decompress it,
 install all the required libraries in the `requirements.txt` file in the project repo. To do so, 
-=======
-install all the required libraries in the *requirements.txt* file in the project repo. To do so, 
->>>>>>> dfb0ba8b065587f881b2be6733712f249530bf12
+install all the required libraries in the *requirements.txt* file in the project repo. To do so,
 simply type in the following command using the command prompt on windows.
 *N.B*: A prior basic knowledge of using the command prompt is needed. This assumes that python have
 beed installed and pip added to the `ENVIRONMENTAL PATH VARIABLE`. If not, download python from
