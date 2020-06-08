@@ -1,9 +1,11 @@
 (function(){
     // app class
     class NovaClient {
-
+        // configurations
         name = "BECCA"
         version = "1.0.0"
+        base_host = "http://127.0.0.1:5000/"
+
         // the dom elements
         wrapper = null
         header = null
@@ -89,14 +91,9 @@
             this.appendDom()
         }
 
-        send_message () {
-            let msg = this.input.value
-            console.log(msg)
-        }
-
         init_app() {
-            this.create_ui()
             console.log(this.name+" is initializing")
+            this.create_ui()
         }
 
         start() {
@@ -104,19 +101,43 @@
             this.init_app()
         }
 
+        add_msg_bubble(text, person) {
+            let bubble, p
+            bubble = document.createElement("div")
+            p = document.createElement("p")
+            p.innerText = text
+            bubble.appendChild(p)
+            bubble.classList.add("message-box")
+            bubble.classList.add(person)
+            this.content.appendChild(bubble)
+            this.input.value = ""
+            this.content.scrolllTop = this.content.scrolllHeight
+        }
+
+        send_message() {
+            let msg = this.input.value
+            if (msg != "") {
+                this.ajax_call(msg)
+                this.add_msg_bubble(msg ,"user")
+            }
+        }
+
+        ajax_call(text) {
+            let xhttp = new XMLHttpRequest ();
+            bot = this
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    let result = JSON.parse(xhttp.responseText)
+                    bot.add_msg_bubble(result.message, "bot")
+                }
+            }
+            xhttp.open ("GET", this.base_host+"reply?m="+text);
+            xhttp.setRequestHeader ("Content-type", "application/json");
+            xhttp.send();
+        }
     }
 
     bot = new NovaClient();
     bot.start()
-    
-
-    // document.querySelector("#openNova").addEventListener("click", function(e){
-    //     // document.querySelector("#nova").classList.toggle("closed")
-    //     bot.wrapper.classList.toggle("closed")
-    // })
-    // document.querySelector("#closeNova").addEventListener("click", function(e){
-    //     // document.querySelector("#nova").classList.toggle("closed")
-    //     bot.wrapper.classList.toggle("closed")
-    // })
 
 })();

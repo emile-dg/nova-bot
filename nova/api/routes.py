@@ -1,6 +1,5 @@
-from web import app
+from api import app, chat_mgr
 from flask import render_template, request
-from web import chat_mgr
 
 @app.route("/")
 def home():
@@ -8,8 +7,8 @@ def home():
 
 @app.route("/reply")
 def reply():
-    user_msg = request.args.get("msg", None)
+    user_msg = request.args.get("m", None)
     if user_msg and len(user_msg) > 0:
-        return {"reply": chat_mgr.respond(user_msg)}
+        return {"message": chat_mgr.respond(user_msg)}
     else:
-        return {"reply": ""}
+        return {"message": ""}
